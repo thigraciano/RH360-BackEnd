@@ -6,7 +6,7 @@ namespace RH360_BackEnd.Repositorio.Interface
     {
         Task<IEnumerable<UsuarioModel>> ObterTodos();
         Task<int> CriarUsuario(UsuarioModel usuario);
-        void AtualizarUsuario(int id, UsuarioModel usuario);
+        Task AtualizarUsuario(int id, UsuarioModel usuario);
         Task ExcluirUsuario(int id);
     }
 }

@@ -3,6 +3,7 @@ using Npgsql;
 using RH360_BackEnd.Model;
 using RH360_BackEnd.Repositorio.Interface;
 using Sata.Api.Estoque.Infraestrutura.Util;
+using System.Data.Common;
 
 namespace RH360_BackEnd.Repositorio
 {
@@ -19,8 +20,6 @@ namespace RH360_BackEnd.Repositorio
         {
             using (var connection = new NpgsqlConnection(_connectionString))
             {
-                connection.Open();
-
  
                 CriadorSQL objSql = new CriadorSQL("usuarios");
 
@@ -58,21 +57,19 @@ namespace RH360_BackEnd.Repositorio
             }
         }
 
-        public void AtualizarUsuario(int id, UsuarioModel usuario)
+        public async Task AtualizarUsuario(int id, UsuarioModel usuario)
         {
             using (var connection = new NpgsqlConnection(_connectionString))
             {
-                connection.Open();
-                var query = "UPDATE usuarios SET nome = @nome, email = @email, senha = @senha WHERE id = @id";
-
-                using (var command = new NpgsqlCommand(query, connection))
+                CriadorSQL objSql = new CriadorSQL("usuarios");
+                objSql.AddCampo(new Dictionary<string, object>
                 {
-                    command.Parameters.AddWithValue("@id", id);
-                    command.Parameters.AddWithValue("@nome", usuario.Nome);
-                    command.Parameters.AddWithValue("@email", usuario.email);
-                    command.Parameters.AddWithValue("@senha", usuario.senha);
-                    command.ExecuteNonQuery();
-                }
+                { "nome", usuario.Nome },
+                { "email", usuario.email },
+                { "senha", usuario.senha },
+                });
+                objSql.AddWhere("id", id);
+                await connection.ExecuteAsync(objSql.Update());
             }
         }
 
