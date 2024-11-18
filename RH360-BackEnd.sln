@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RH360-BackEnd", "RH360-BackEnd\RH360-BackEnd.csproj", "{82D0BBF9-98C8-4455-9812-B7780CC0EA93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RH360_BackEnd.Tests", "RH360_BackEnd.Tests\RH360_BackEnd.Tests.csproj", "{1BCC6802-D00F-4A72-A479-F72C2022124E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82D0BBF9-98C8-4455-9812-B7780CC0EA93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82D0BBF9-98C8-4455-9812-B7780CC0EA93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82D0BBF9-98C8-4455-9812-B7780CC0EA93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82D0BBF9-98C8-4455-9812-B7780CC0EA93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BCC6802-D00F-4A72-A479-F72C2022124E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BCC6802-D00F-4A72-A479-F72C2022124E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BCC6802-D00F-4A72-A479-F72C2022124E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BCC6802-D00F-4A72-A479-F72C2022124E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {543B800D-287F-49AE-BE8B-6AAFCCEF379C}
+	EndGlobalSection
+EndGlobal
